@@ -16,8 +16,14 @@ const PORT = process.env.PORT || 5500;
 app.use(cors());
 app.use(express.json());
 
-/* ── Serve static frontend files ── */
-app.use(express.static(path.join(__dirname)));
+/* ── Serve React build (production) or legacy HTML ── */
+const publicDir = path.join(__dirname, 'public');
+const legacyDir = path.join(__dirname);
+if (require('fs').existsSync(publicDir)) {
+  app.use(express.static(publicDir));
+} else {
+  app.use(express.static(legacyDir));
+}
 
 /* ── API Routes ── */
 app.use('/api/chat',  chatRouter);
@@ -29,15 +35,19 @@ app.get('/api/health', (req, res) => {
   res.json({
     status:  'ok',
     service: 'ElectEd Backend',
-    version: '1.0.0',
+    version: '2.0.0',
+    mode:    require('fs').existsSync(publicDir) ? 'react' : 'legacy',
     uptime:  Math.floor(process.uptime()) + 's',
     time:    new Date().toISOString(),
   });
 });
 
-/* ── Catch-all: serve frontend for any unknown route ── */
+/* ── Catch-all: serve React SPA for any unknown route ── */
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  const indexFile = require('fs').existsSync(publicDir)
+    ? path.join(publicDir, 'index.html')
+    : path.join(legacyDir, 'index.html');
+  res.sendFile(indexFile);
 });
 
 /* ── Start ── */
