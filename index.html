@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectEd – Election Process Education</title>
+  <meta name="description" content="Understand the election process, timelines, and steps in an interactive, easy-to-follow way with ElectEd — your go-to guide for democratic participation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ───────────────── NAVBAR ───────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">🗳️</span>
+        <span class="logo-text">ElectEd</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#overview"  class="nav-link">Overview</a></li>
+        <li><a href="#timeline"  class="nav-link">Timeline</a></li>
+        <li><a href="#steps"     class="nav-link">Steps</a></li>
+        <li><a href="#roles"     class="nav-link">Roles</a></li>
+        <li><a href="#quiz"      class="nav-link">Quiz</a></li>
+        <li><a href="#assistant" class="nav-link nav-cta">Ask AI</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <span class="toggle-knob"></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───────────────── HERO ───────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">
+        <span>🏛️</span> Democracy Starts With You
+      </div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        Understand the<br/>
+        <span class="gradient-text">Election Process</span><br/>
+        Like Never Before
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        An interactive guide to timelines, voter registration, polling, and everything you need to participate confidently in democracy.
+      </p>
+      <div class="hero-actions animate-fade-up delay-3">
+        <a href="#timeline" class="btn btn-primary" id="hero-start-btn">
+          <span>Explore Timeline</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#assistant" class="btn btn-ghost" id="hero-ask-btn">Ask the AI Assistant</a>
+      </div>
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="stat-card">
+          <span class="stat-num" data-count="8">0</span>
+          <span class="stat-label">Key Stages</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="12">0</span>
+          <span class="stat-label">Step-by-Step Guides</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="10">0</span>
+          <span class="stat-label">Quiz Questions</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ───────────────── OVERVIEW ───────────────── -->
+  <section class="section overview" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🗺️ Overview</span>
+        <h2 class="section-title">What is an Election?</h2>
+        <p class="section-desc">Elections are the cornerstone of democracy — a process by which citizens choose their representatives and shape their government.</p>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-card" id="ov-card-1">
+          <div class="ov-icon">📜</div>
+          <h3>Definition</h3>
+          <p>An election is a formal group decision-making process by which a population chooses an individual or multiple individuals to hold public office or endorse a proposal.</p>
+        </div>
+        <div class="overview-card" id="ov-card-2">
+          <div class="ov-icon">⚖️</div>
+          <h3>Why It Matters</h3>
+          <p>Elections ensure that those in power are accountable to the people. Every vote shapes policy, public services, national security, and the future of society.</p>
+        </div>
+        <div class="overview-card" id="ov-card-3">
+          <div class="ov-icon">🌍</div>
+          <h3>Types of Elections</h3>
+          <p>From local municipal elections to national general elections, referendums, and by-elections — each serves a unique democratic purpose.</p>
+          <div class="tag-row">
+            <span class="tag">General</span>
+            <span class="tag">Municipal</span>
+            <span class="tag">By-election</span>
+            <span class="tag">Referendum</span>
+          </div>
+        </div>
+        <div class="overview-card" id="ov-card-4">
+          <div class="ov-icon">🏛️</div>
+          <h3>Governing Bodies</h3>
+          <p>Independent election commissions oversee elections to ensure fairness, transparency, and impartiality throughout the entire process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── TIMELINE ───────────────── -->
+  <section class="section timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">📅 Timeline</span>
+        <h2 class="section-title">Election Calendar</h2>
+        <p class="section-desc">Follow the chronological journey of an election from announcement to results.</p>
+      </div>
+      <div class="timeline" id="timeline-track">
+        <!-- JS will render timeline items -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── STEPS ───────────────── -->
+  <section class="section steps-section" id="steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">📋 Steps</span>
+        <h2 class="section-title">How to Participate</h2>
+        <p class="section-desc">From registering as a voter to casting your ballot — here's your complete participation guide.</p>
+      </div>
+      <div class="steps-tabs">
+        <button class="steps-tab active" data-tab="voter" id="tab-voter">👤 Voter</button>
+        <button class="steps-tab" data-tab="candidate" id="tab-candidate">🏅 Candidate</button>
+        <button class="steps-tab" data-tab="observer" id="tab-observer">👁️ Observer</button>
+      </div>
+      <div class="steps-content" id="steps-content">
+        <!-- JS renders steps -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── ROLES ───────────────── -->
+  <section class="section roles-section" id="roles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">👥 Roles</span>
+        <h2 class="section-title">Key Election Roles</h2>
+        <p class="section-desc">Understand who does what in an election — every role is critical for a free and fair process.</p>
+      </div>
+      <div class="roles-grid" id="roles-grid">
+        <!-- JS renders role cards -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── QUIZ ───────────────── -->
+  <section class="section quiz-section" id="quiz">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🧠 Quiz</span>
+        <h2 class="section-title">Test Your Knowledge</h2>
+        <p class="section-desc">How well do you understand the election process? Take the quiz to find out!</p>
+      </div>
+      <div class="quiz-wrapper">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+        <div class="quiz-card" id="quiz-card">
+          <div class="quiz-meta">
+            <span id="quiz-counter">Question 1 of 10</span>
+            <span id="quiz-score-live">Score: 0</span>
+          </div>
+          <div class="quiz-question" id="quiz-question">Loading...</div>
+          <div class="quiz-options" id="quiz-options"></div>
+          <div class="quiz-explanation hidden" id="quiz-explanation"></div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="quiz-next-btn" disabled>Next →</button>
+          </div>
+        </div>
+        <div class="quiz-result hidden" id="quiz-result">
+          <div class="result-icon" id="result-icon">🏆</div>
+          <h3 id="result-title">Excellent!</h3>
+          <p id="result-desc"></p>
+          <div class="result-score-ring">
+            <svg viewBox="0 0 120 120" id="result-ring-svg">
+              <circle cx="60" cy="60" r="50" class="ring-bg"/>
+              <circle cx="60" cy="60" r="50" class="ring-fill" id="ring-fill"/>
+            </svg>
+            <div class="result-score-text" id="result-score-text">0/10</div>
+          </div>
+          <button class="btn btn-primary" id="quiz-restart-btn">Try Again 🔄</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── AI ASSISTANT ───────────────── -->
+  <section class="section assistant-section" id="assistant">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🤖 AI Assistant</span>
+        <h2 class="section-title">Ask About Elections</h2>
+        <p class="section-desc">Got questions? Our AI-powered assistant is here to guide you through anything election-related.</p>
+      </div>
+      <div class="assistant-wrapper">
+        <div class="chat-window" id="chat-window">
+          <div class="chat-bubble bot" id="welcome-bubble">
+            <div class="bubble-avatar">🤖</div>
+            <div class="bubble-body">
+              <p>Hello! I'm ElectBot 🗳️ — your election education assistant. Ask me anything about voting, registering, candidates, the election timeline, or how democracy works!</p>
+              <div class="quick-chips">
+                <button class="chip" data-q="How do I register to vote?">Register to vote</button>
+                <button class="chip" data-q="What happens on election day?">Election Day</button>
+                <button class="chip" data-q="What is a constituency?">Constituencies</button>
+                <button class="chip" data-q="How are votes counted?">Vote Counting</button>
+                <button class="chip" data-q="What is EVM?">About EVM</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" class="chat-input" id="chat-input" placeholder="Type your question about elections..." autocomplete="off" />
+          <button class="send-btn" id="send-btn" aria-label="Send">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── FOOTER ───────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">🗳️</span>
+          <span class="logo-text">ElectEd</span>
+          <p>Empowering citizens through election education.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Explore</h4>
+          <a href="#overview">Overview</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#steps">Steps</a>
+          <a href="#roles">Roles</a>
+          <a href="#quiz">Quiz</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Resources</h4>
+          <a href="#assistant">AI Assistant</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ElectEd. Built for civic education and democratic awareness.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

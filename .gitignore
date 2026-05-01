@@ -1,0 +1,19 @@
+# Dependencies — never commit these
+node_modules/
+
+# Environment variables — keep secrets local
+.env
+.env.local
+.env.*.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
