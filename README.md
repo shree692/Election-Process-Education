@@ -55,13 +55,19 @@ node server.js
 ```
 
 ## ⚙️ Separate backend URL
-If the frontend is hosted separately from the backend, create `client/.env` with:
+The frontend already defaults to the deployed Render backend at:
 
-```env
-VITE_API_BASE_URL=https://election-process-education-sy7l.onrender.com
+```text
+https://election-process-education-sy7l.onrender.com
 ```
 
-Then rebuild the frontend so it uses the deployed backend URL.
+If you want to override that locally, create `client/.env` with:
+
+```env
+VITE_API_BASE_URL=https://localhost:5500
+```
+
+Then rebuild the frontend so it uses the override URL.
 
 ## 🔌 API Endpoints
 
