@@ -58,7 +58,7 @@ node server.js
 If the frontend is hosted separately from the backend, create `client/.env` with:
 
 ```env
-VITE_API_BASE_URL=https://election-process-education-fogl.onrender.com
+VITE_API_BASE_URL=https://election-process-education-sy7l.onrender.com
 ```
 
 Then rebuild the frontend so it uses the deployed backend URL.
