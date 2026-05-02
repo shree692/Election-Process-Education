@@ -54,6 +54,15 @@ node server.js
 # Visit http://localhost:5500
 ```
 
+## ⚙️ Separate backend URL
+If the frontend is hosted separately from the backend, create `client/.env` with:
+
+```env
+VITE_API_BASE_URL=https://election-process-education-fogl.onrender.com
+```
+
+Then rebuild the frontend so it uses the deployed backend URL.
+
 ## 🔌 API Endpoints
 
 | Method | Endpoint | Description |

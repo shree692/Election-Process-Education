@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { apiUrl } from '../api';
 
 export default function Timeline() {
   const [items, setItems] = useState([]);
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    fetch('/api/data/timeline')
+    fetch(apiUrl('/api/data/timeline'))
       .then(r => r.json())
       .then(d => setItems(d.timeline))
       .catch(() => setItems([]));

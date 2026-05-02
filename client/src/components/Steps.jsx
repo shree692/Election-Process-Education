@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { apiUrl } from '../api';
 
 const tabs = [
   { key: 'voter',     label: '👤 Voter' },
@@ -11,7 +12,7 @@ export default function Steps() {
   const [steps, setSteps]         = useState([]);
 
   useEffect(() => {
-    fetch(`/api/data/steps?tab=${activeTab}`)
+    fetch(apiUrl(`/api/data/steps?tab=${activeTab}`))
       .then(r => r.json())
       .then(d => setSteps(d.steps))
       .catch(() => setSteps([]));

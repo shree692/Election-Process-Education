@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 /* ── Serve React build (production) or legacy HTML ── */
-const publicDir = path.join(__dirname, 'public');
+const publicDir = path.join(__dirname, '../client/dist');
 const legacyDir = path.join(__dirname);
 if (require('fs').existsSync(publicDir)) {
   app.use(express.static(publicDir));

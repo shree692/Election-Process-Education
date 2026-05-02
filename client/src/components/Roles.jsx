@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { apiUrl } from '../api';
 
 export default function Roles() {
   const [roles, setRoles] = useState([]);
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    fetch('/api/data/roles')
+    fetch(apiUrl('/api/data/roles'))
       .then(r => r.json())
       .then(d => setRoles(d.roles))
       .catch(() => setRoles([]));

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { apiUrl } from '../api';
 
 const CHIPS = [
   { label: 'Register to vote',  q: 'How do I register to vote?' },
@@ -32,7 +33,7 @@ export default function Assistant() {
     setMessages(m => [...m, { role:'user', text: msg }]);
     setTyping(true);
     try {
-      const res  = await fetch('/api/chat', {
+      const res  = await fetch(apiUrl('/api/chat'), {
         method: 'POST', headers: { 'Content-Type':'application/json' },
         body: JSON.stringify({ message: msg }),
       });

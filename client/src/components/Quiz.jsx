@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { apiUrl } from '../api';
 
 const ICONS  = ['😅','🤔','📚','👍','🌟','🏆'];
 const MSGS   = ['Keep Learning!','Getting There!','Good Effort!','Well Done!','Great Job!','Election Expert!'];
@@ -25,7 +26,7 @@ export default function Quiz() {
   const ringRef = useRef(null);
 
   useEffect(() => {
-    fetch('/api/quiz/questions').then(r => r.json()).then(d => setQuestions(d.questions));
+    fetch(apiUrl('/api/quiz/questions')).then(r => r.json()).then(d => setQuestions(d.questions));
   }, []);
 
   const total = questions.length;
@@ -35,7 +36,7 @@ export default function Quiz() {
 
   const selectAnswer = async (chosen) => {
     if (selected) return;
-    const res  = await fetch(`/api/quiz/answer/${q.id}`);
+    const res  = await fetch(apiUrl(`/api/quiz/answer/${q.id}`));
     const data = await res.json();
     const correct = data.ans;
     setSelected({ chosen, correct });
@@ -63,7 +64,7 @@ export default function Quiz() {
   const saveScore = async () => {
     if (!playerName.trim()) return;
     const finalScore = selected && selected.chosen === selected.correct ? score : score;
-    const res  = await fetch('/api/quiz/score', {
+    const res  = await fetch(apiUrl('/api/quiz/score'), {
       method: 'POST', headers: { 'Content-Type':'application/json' },
       body: JSON.stringify({ name: playerName.trim(), score, total }),
     });
@@ -74,7 +75,7 @@ export default function Quiz() {
   };
 
   const fetchLeaderboard = () => {
-    fetch('/api/quiz/leaderboard').then(r => r.json()).then(d => setLeaderboard(d.leaderboard));
+    fetch(apiUrl('/api/quiz/leaderboard')).then(r => r.json()).then(d => setLeaderboard(d.leaderboard));
   };
 
   const restart = () => {
